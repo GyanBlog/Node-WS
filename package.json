@@ -1,0 +1,53 @@
+{
+  "name": "nodews",
+  "version": "1.0.0",
+  "description": "Sample web service in node",
+  "main": "app.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/_mocha --timeout 120000 test/*/*.js",
+    "start": "node --harmony --max_old_space_size=400 app.js",
+    "lint": "mkdir -p artifacts/lint/ && ./node_modules/.bin/jshint . --verbose",
+    "lint-jenkins": "mkdir -p artifacts/lint/ && ./node_modules/.bin/jshint . --verbose --reporter=checkstyle > artifacts/lint/jshint.xml || exit 0",
+    "devtest": "./node_modules/.bin/jenkins-mocha --cobertura test/*",
+    "coverage": "./node_modules/.bin/istanbul cover --report html ./node_modules/mocha/bin/_mocha -- --timeout 120000 test/*/*.js"
+  },
+  "author": "Gorav Singal",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.2",
+    "cache-manager": "2.5.0",
+    "celebrate": "6.0.0",
+    "compression": "1.7.1",
+    "convict": "4.0.1",
+    "cookie-parser": "1.4.3",
+    "debug": "3.1.0",
+    "express": "4.16.2",
+    "express-session": "1.15.6",
+    "express-winston": "2.4.0",
+    "flavored-path": "0.0.8",
+    "helmet": "3.9.0",
+    "passport": "0.4.0",
+    "passport-dummy": "0.0.1",
+    "passport-saml": "0.31.0",
+    "passport-strategy": "1.0.0",
+    "promise-events": "0.1.4",
+    "randomstring": "1.1.5",
+    "request": "2.83.0",
+    "sharp": "0.18.4",
+    "underscore": "1.8.3",
+    "urijs": "1.19.0",
+    "winston": "2.4.0",
+    "winston-daily-rotate-file": "1.7.2",
+    "zlib": "1.0.5"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "istanbul": "0.4.5",
+    "jenkins-mocha": "6.0.0",
+    "jshint": "2.9.5",
+    "mocha": "4.0.1",
+    "proxyquire": "1.8.0",
+    "sinon": "4.0.2",
+    "sinon-chai": "2.14.0"
+  }
+}
